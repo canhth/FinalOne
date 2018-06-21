@@ -1,0 +1,29 @@
+PODS:
+  - Alamofire (4.7.2)
+  - CT_RESTAPI (1.0.0):
+    - Alamofire
+  - ViewAnimator (2.1.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - CT_RESTAPI (from `LocalPods/CT_RESTAPI/`)
+  - ViewAnimator (from `LocalPods/ViewAnimator/`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+
+EXTERNAL SOURCES:
+  CT_RESTAPI:
+    :path: LocalPods/CT_RESTAPI/
+  ViewAnimator:
+    :path: LocalPods/ViewAnimator/
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  CT_RESTAPI: 0ccefee3684abe182e7e40350eeec1caabd177b6
+  ViewAnimator: cc315623e2b94f255d6111dde7e1ca0e623bb05c
+
+PODFILE CHECKSUM: 768638d9cf7dd236ce049871dc2734e33ce4214d
+
+COCOAPODS: 1.5.2
