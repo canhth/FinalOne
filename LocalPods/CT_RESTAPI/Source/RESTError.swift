@@ -30,7 +30,7 @@ public enum CTNetworkErrorType: Error {
             return CTNetworkErrorType.kTimeout
         case .errorMessage(let code, _, _):
             return code
-        case .unspecified(_):
+        case .unspecified:
             return CTNetworkErrorType.kUnspecified
         default:
             return -999
@@ -48,7 +48,7 @@ open class RESTError: Codable {
         case errorResponse = "message"
     }
     
-    public init(typeError : CTNetworkErrorType, status: Bool = false, code: Int = 404) {
+    public init(typeError: CTNetworkErrorType, status: Bool = false, code: Int = 404) {
         switch typeError {
         case .noNetwork:
             errorFromResponse = "No network" //set default string here
@@ -78,12 +78,11 @@ open class RESTError: Codable {
                 let decoder = JSONDecoder()
                 restError = try decoder.decode(RESTError.self, from: responseData)
             } catch { print(error) }
-        }
-        else {
+        } else {
             restError.errorFromResponse = (NSString(data: responseData!, encoding: String.Encoding.utf8.rawValue) as String?)!
         }
         
-        if (error != nil) {
+        if error != nil {
             let errorString: String! = error!.localizedDescription
             restError.errorFromResponse = errorString 
         }

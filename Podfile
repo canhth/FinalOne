@@ -4,10 +4,14 @@ target 'FinalOne' do
   use_frameworks!
 
   # Pods for FinalOne
-  pod 'Alamofire'
   pod 'CT_RESTAPI', :path => 'LocalPods/CT_RESTAPI/'
   pod 'ViewAnimator', :path => 'LocalPods/ViewAnimator/'
-
+  
+  pod 'Alamofire'
+  pod 'SwiftLint'
+  pod 'Kingfisher'
+  pod 'SVProgressHUD'
+  
   target 'FinalOneTests' do
     inherit! :search_paths
     # Pods for testing

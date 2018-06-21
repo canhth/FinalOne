@@ -14,17 +14,17 @@ typealias RestAPICompletion = (_ result: Any?, _ error: RESTError?) -> Void
 /// The main class of CT_RESTAPI
 open class RESTApiClient: NSObject {
     
-    //MARK: - Variables
+    // MARK: - Variables
     public typealias RestAPICompletion = (_ result: Any?, _ error: RESTError?) -> Void
     fileprivate var baseUrl: String = ""
     var parameters: [String: Any] = [:]
     fileprivate var headers: [String: String] = RESTContants.headers
     fileprivate var requestBodyType: RESTRequestBodyType
-    fileprivate var requestMethod : HTTPMethod
-    fileprivate var endcoding : ParameterEncoding
+    fileprivate var requestMethod: HTTPMethod
+    fileprivate var endcoding: ParameterEncoding
     fileprivate let acceptableStatusCodes: [Int]
     
-    //MARK: - Main functions
+    // MARK: - Main functions
     
     /// Init RESTApiClient object
     ///
@@ -33,62 +33,50 @@ open class RESTApiClient: NSObject {
     ///   - functionName: last func of API URL
     ///   - method: API method
     ///   - endcoding: API endcoding
-    public init(subPath: String, functionName: String, method : RequestMethod, endcoding: Endcoding) {
+    public init(subPath: String, functionName: String, method: RequestMethod, endcoding: Endcoding) {
         
         // Set base url
-        baseUrl = RESTContants.kDefineWebserviceUrl + subPath + (functionName.count == 0 ? "" : ("/" + functionName))
+        baseUrl = RESTContants.kDefineWebserviceUrl + subPath + (functionName.isEmpty ? "" : ("/" + functionName))
         requestBodyType = RESTRequestBodyType.json
         
         switch endcoding {
         case .JSON:
             self.endcoding = JSONEncoding.default
-            break
         case .URL:
             self.endcoding = URLEncoding.default
-            break
         case .CUSTOM:
             self.endcoding = URLEncoding.default
-            break
         }
         
-        switch method
-        {
+        switch method {
         case .GET:
             requestMethod = Alamofire.HTTPMethod.get
-            break
         case .POST:
             requestMethod = Alamofire.HTTPMethod.post
-            break
         case .PUT:
             requestMethod = Alamofire.HTTPMethod.put
-            break
         case .DELETE:
             requestMethod = Alamofire.HTTPMethod.delete
-            break
         default:
             requestMethod = Alamofire.HTTPMethod.get
-            break
         }
         
         acceptableStatusCodes = Array(200..<300)
     }
     
-    //MARK: - Properties
-    open func setQueryParam(_ param: [String: Any]?)
-    {
-        parameters = param ?? ["" : ""]
+    // MARK: - Properties
+    open func setQueryParam(_ param: [String: Any]?) {
+        parameters = param ?? ["": ""]
     }
     
-    open func addHeader(_ name: String, value: Any)
-    {
+    open func addHeader(_ name: String, value: Any) {
         headers[name] = String(describing: value)
     }
     
-    //MARK: - Base request
+    // MARK: - Base request
     /// Base request functions
     ///
-    open func baseRequest(_ completion: @escaping RestAPICompletion)
-    {
+    open func baseRequest(_ completion: @escaping RestAPICompletion) {
         Alamofire.request(baseUrl, method: requestMethod, parameters: parameters, encoding: endcoding)
             .validate()
             .validate(statusCode: self.acceptableStatusCodes)
@@ -101,7 +89,5 @@ open class RESTApiClient: NSObject {
                 completion(nil, restError)
             }
         }
-    }
-    
-    
+    }  
 }

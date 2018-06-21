@@ -26,5 +26,5 @@ public class ViewAnimatorConfig {
     public static var maxZoomScale: Double = 2.0
     
     /// Maximum rotation (left or right) to be applied in animations using random AnimationType.rotate
-    public static var maxRotationAngle: CGFloat = CGFloat.pi/4
+    public static var maxRotationAngle: CGFloat = CGFloat.pi / 4
 }

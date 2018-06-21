@@ -72,7 +72,7 @@ public extension UIView {
                                options: UIViewAnimationOptions = [],
                                completion: (() -> Void)? = nil) {
 
-        guard views.count > 0 else {
+        guard !views.isEmpty else {
             completion?()
             return
         }
