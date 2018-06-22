@@ -30,6 +30,8 @@
 		CE28072520DBB40C0018B2C3 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28072420DBB40C0018B2C3 /* Products.swift */; };
 		CE28072820DBB4E40018B2C3 /* HomeListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28072720DBB4E40018B2C3 /* HomeListItems.swift */; };
 		CE28072A20DBB4FF0018B2C3 /* HomeListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28072920DBB4FF0018B2C3 /* HomeListItemViewModel.swift */; };
+		CE7C856F20DC8C820017EC00 /* TransactionTabMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C856D20DC8C820017EC00 /* TransactionTabMenu.swift */; };
+		CE7C857020DC8C820017EC00 /* TransactionTabMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7C856E20DC8C820017EC00 /* TransactionTabMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		CE28072420DBB40C0018B2C3 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		CE28072720DBB4E40018B2C3 /* HomeListItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListItems.swift; sourceTree = "<group>"; };
 		CE28072920DBB4FF0018B2C3 /* HomeListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListItemViewModel.swift; sourceTree = "<group>"; };
+		CE7C856D20DC8C820017EC00 /* TransactionTabMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTabMenu.swift; sourceTree = "<group>"; };
+		CE7C856E20DC8C820017EC00 /* TransactionTabMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionTabMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +163,7 @@
 				CE2806FD20DB93D20018B2C3 /* Components */,
 				CE28070020DB93EA0018B2C3 /* Sections */,
 				CE28070120DB93F10018B2C3 /* Storyboards */,
-				CE28070220DB94030018B2C3 /* Utilities */,
+				CE7C856C20DC8C5C0017EC00 /* Utilities */,
 				CE2806FF20DB93E10018B2C3 /* Resources */,
 			);
 			path = FinalOne;
@@ -237,21 +241,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		CE28070220DB94030018B2C3 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
 		CE28070B20DB94510018B2C3 /* MainHome */ = {
 			isa = PBXGroup;
 			children = (
+				CE7C856B20DC8C500017EC00 /* Views */,
 				CE28070C20DB945B0018B2C3 /* Coordinators */,
 				CE28070D20DB94650018B2C3 /* Servieces */,
 				CE28070F20DB94720018B2C3 /* Controllers */,
 				CE28071120DB947D0018B2C3 /* ViewModels */,
-				CE28070E20DB946E0018B2C3 /* Views */,
 				CE28071020DB94790018B2C3 /* Models */,
 			);
 			path = MainHome;
@@ -271,13 +268,6 @@
 				CE28072220DBB3090018B2C3 /* HomeServiece.swift */,
 			);
 			path = Servieces;
-			sourceTree = "<group>";
-		};
-		CE28070E20DB946E0018B2C3 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		CE28070F20DB94720018B2C3 /* Controllers */ = {
@@ -312,6 +302,22 @@
 				CE28072720DBB4E40018B2C3 /* HomeListItems.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CE7C856B20DC8C500017EC00 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C856D20DC8C820017EC00 /* TransactionTabMenu.swift */,
+				CE7C856E20DC8C820017EC00 /* TransactionTabMenu.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE7C856C20DC8C5C0017EC00 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		DCF8506A03D94C6B0E733E0B /* Frameworks */ = {
@@ -434,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE2806D920DB8E990018B2C3 /* LaunchScreen.storyboard in Resources */,
+				CE7C857020DC8C820017EC00 /* TransactionTabMenu.xib in Resources */,
 				CE2806D620DB8E990018B2C3 /* Assets.xcassets in Resources */,
 				CE2806D420DB8E960018B2C3 /* Main.storyboard in Resources */,
 			);
@@ -561,6 +568,7 @@
 				CE28071B20DBA5B20018B2C3 /* MainHomeViewController.swift in Sources */,
 				CE28071320DBA3AA0018B2C3 /* BaseCoordinator.swift in Sources */,
 				CE28071F20DBAE5F0018B2C3 /* LoadingView.swift in Sources */,
+				CE7C856F20DC8C820017EC00 /* TransactionTabMenu.swift in Sources */,
 				CE28072320DBB3090018B2C3 /* HomeServiece.swift in Sources */,
 				CE28070720DB94360018B2C3 /* UIApplication+Extension.swift in Sources */,
 				CE28072820DBB4E40018B2C3 /* HomeListItems.swift in Sources */,

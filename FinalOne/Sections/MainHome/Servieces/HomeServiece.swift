@@ -9,28 +9,28 @@
 import UIKit
 import CT_RESTAPI
 
-typealias SearchDriversServiceCompletionHandler = (_ results: [Item], _ error: RESTError?) -> Void
+typealias HomePageServiceCompletionHandler = (_ results: [Item], _ error: RESTError?) -> Void
 
-protocol SearchDriversServiceProtocol {
-    func getListDrivers(completion: @escaping SearchDriversServiceCompletionHandler)
+protocol HomePageServiceProtocol {
+    func getListDrivers(completion: @escaping HomePageServiceCompletionHandler)
 }
 
-final class SearchDriversServiece: SearchDriversServiceProtocol {
+final class HomePageServiece: HomePageServiceProtocol {
     
-    /// Get drivers list
+    /// Get list of items
     ///
     /// - Parameters:
     ///   - completion: Results and error of API
-    /// - Returns: <[Car]>
-    func getListDrivers(completion: @escaping SearchDriversServiceCompletionHandler) {
+    /// - Returns: <[Item]>
+    func getListDrivers(completion: @escaping HomePageServiceCompletionHandler) {
         
         let apiManager = RESTApiClient(subPath: "wunderbucket", functionName: "locations.json", method: .GET, endcoding: .URL)
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         apiManager.baseRequest { (results, error) in
             if let jsonData = results as? Data {
                 do {
-                    let results: [Item] = try JSONDecoder().decode(Item.self, from: jsonData)
-                    completion(results, nil)
+                    let results: Products = try JSONDecoder().decode(Products.self, from: jsonData)
+                    completion(results.products, nil)
                 } catch {
                     print("Error when parsing JSON: \(error)")
                 }
@@ -40,6 +40,4 @@ final class SearchDriversServiece: SearchDriversServiceProtocol {
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
-    
-    
 }

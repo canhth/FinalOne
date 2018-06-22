@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionTabMenu" customModule="V1" customModuleProvider="target">
+            <connections>
+                <outlet property="favoriteButton" destination="uq2-6R-swg" id="4HY-dH-pUG"/>
+                <outlet property="indyLeftConts" destination="K7g-kJ-A7D" id="VJ4-2a-YyM"/>
+                <outlet property="indyView" destination="bYv-ow-DXD" id="gKh-22-RBo"/>
+                <outlet property="menuBottomLine" destination="5p4-Hq-Qmz" id="WrF-WC-LqN"/>
+                <outlet property="recentButton" destination="fcd-Md-dvg" id="1dv-Gu-Pjo"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbR-Qq-UgN">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcd-Md-dvg">
+                    <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                    <state key="normal" title="รายการล่าสุด" image="iRecentActive">
+                        <color key="titleColor" red="0.90196078430000004" green="0.46274509800000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="menuButtonTapped:" destination="-1" eventType="touchUpInside" id="Pez-Cl-GoJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uq2-6R-swg">
+                    <rect key="frame" x="160" y="0.0" width="160" height="40"/>
+                    <accessibility key="accessibilityConfiguration" identifier="favoriteButton"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                    <state key="normal" title="รายการโปรด" image="iFavorite">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="menuButtonTapped:" destination="-1" eventType="touchUpInside" id="lNw-M1-zHR"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYv-ow-DXD">
+                    <rect key="frame" x="0.0" y="37" width="160" height="3"/>
+                    <color key="backgroundColor" red="0.90196078430000004" green="0.46274509800000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="3" id="QrH-lS-2jr"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5p4-Hq-Qmz">
+                    <rect key="frame" x="0.0" y="39" width="320" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="3gp-ov-ha1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bYv-ow-DXD" secondAttribute="bottom" id="1WC-pc-Ikp"/>
+                <constraint firstItem="5p4-Hq-Qmz" firstAttribute="leading" secondItem="cbR-Qq-UgN" secondAttribute="leading" id="1lM-Ba-VGd"/>
+                <constraint firstAttribute="trailing" secondItem="5p4-Hq-Qmz" secondAttribute="trailing" id="5W4-kx-YSN"/>
+                <constraint firstItem="uq2-6R-swg" firstAttribute="leading" secondItem="fcd-Md-dvg" secondAttribute="trailing" id="67B-QO-Qwy"/>
+                <constraint firstItem="fcd-Md-dvg" firstAttribute="top" secondItem="cbR-Qq-UgN" secondAttribute="top" id="98e-Na-WfA"/>
+                <constraint firstItem="bYv-ow-DXD" firstAttribute="leading" secondItem="cbR-Qq-UgN" secondAttribute="leading" id="K7g-kJ-A7D"/>
+                <constraint firstAttribute="trailing" secondItem="uq2-6R-swg" secondAttribute="trailing" id="OBA-eY-m5V"/>
+                <constraint firstItem="fcd-Md-dvg" firstAttribute="width" secondItem="cbR-Qq-UgN" secondAttribute="width" multiplier="160:320" id="QNf-91-q77"/>
+                <constraint firstItem="uq2-6R-swg" firstAttribute="top" secondItem="cbR-Qq-UgN" secondAttribute="top" id="Tx8-wk-Sea"/>
+                <constraint firstAttribute="bottom" secondItem="fcd-Md-dvg" secondAttribute="bottom" id="h1y-iH-5HI"/>
+                <constraint firstAttribute="height" constant="40" id="hz6-Ve-JO7"/>
+                <constraint firstAttribute="bottom" secondItem="uq2-6R-swg" secondAttribute="bottom" id="jnb-dY-U2E"/>
+                <constraint firstAttribute="bottom" secondItem="5p4-Hq-Qmz" secondAttribute="bottom" id="oZm-xU-X4s"/>
+                <constraint firstItem="fcd-Md-dvg" firstAttribute="leading" secondItem="cbR-Qq-UgN" secondAttribute="leading" id="uJ0-NV-Qqg"/>
+                <constraint firstItem="bYv-ow-DXD" firstAttribute="width" secondItem="cbR-Qq-UgN" secondAttribute="width" multiplier="160:320" id="w7u-Sw-C8j"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="iFavorite" width="26" height="25"/>
+        <image name="iRecentActive" width="24" height="24"/>
+    </resources>
+</document>
