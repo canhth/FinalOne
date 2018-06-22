@@ -65,7 +65,7 @@ public extension UIView {
                                initialAlpha: CGFloat = 0.0,
                                finalAlpha: CGFloat = 1.0,
                                delay: Double = 0,
-                               animationInterval: TimeInterval = 0.05,
+                               animationInterval: TimeInterval = 0.3,
                                duration: TimeInterval = ViewAnimatorConfig.duration,
                                springWithDamping: CGFloat = 1,
                                velocity: CGFloat = 1,
@@ -89,6 +89,8 @@ public extension UIView {
                              finalAlpha: finalAlpha,
                              delay: Double(index) * animationInterval,
                              duration: duration,
+                             springWithDamping: springWithDamping,
+                             velocity: velocity,
                              options: options,
                              completion: { dispatchGroup.leave() })
             }

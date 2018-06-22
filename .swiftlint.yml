@@ -17,7 +17,8 @@ disabled_rules:
   - implicit_return
   - operator_usage_whitespace
   - redundant_string_enum_value
-
+  - closure_spacing
+  - colon
 opt_in_rules:
   - empty_count
   - force_unwrapping

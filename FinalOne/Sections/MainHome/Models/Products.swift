@@ -15,3 +15,5 @@ struct Products: Decodable {
 struct Items: Decodable {
     var items: [Item]
 }
+
+// Note: I don't have much time to optimize the nested JSON to one Object Model. Will do it later

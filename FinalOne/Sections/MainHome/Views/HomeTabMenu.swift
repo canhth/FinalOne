@@ -8,14 +8,28 @@
 
 import UIKit
 
-protocol TransactionTabMenuDelegate: class {
-    func transaction(menu: TransactionTabMenu, selectedAt index: Int)
+/// This protocol using for TabMenu selection
+protocol HomeTabMenuDelegate: class {
+    func transaction(menu: HomeTabMenu, selectedType type: ItemsType)
 }
 
-class TransactionTabMenu: UIView {
-    private let animateDuration: TimeInterval = 0.2
+/// Enum of TabMenu type
+enum ItemsType: Int {
+    case apples = 0
+    case androids = 1
+}
+
+class HomeTabMenu: UIView {
     
-    public weak var delegate: TransactionTabMenuDelegate?
+    // MARK: IBOutlets & Variables
+    @IBOutlet fileprivate weak var appleButton: UIButton!
+    @IBOutlet fileprivate weak var androidButton: UIButton!
+    @IBOutlet fileprivate weak var indyView: UIView!
+    @IBOutlet fileprivate weak var indyLeftConts: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var menuBottomLine: UIView!
+    
+    private let animateDuration: TimeInterval = 0.5
+    public weak var delegate: HomeTabMenuDelegate?
     
     private var _selectedIndex: Int = 0
     public var selectedIndex: Int {
@@ -33,32 +47,6 @@ class TransactionTabMenu: UIView {
     
     private var prevFrame: CGRect = CGRect.zero
     
-    @IBOutlet weak var appleButton: UIButton!
-    @IBOutlet weak var androidButton: UIButton!
-    @IBOutlet weak var indyView: UIView!
-    @IBOutlet weak var indyLeftConts: NSLayoutConstraint!
-    @IBOutlet weak var menuBottomLine: UIView!
-    
-    init() {
-        super.init(frame: CGRect())
-        setupView()
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-    }
-    
-    required init(coder: NSCoder) {
-        super.init(coder: coder)!
-        setupView()
-    }
-    
-    private func setupView() {
-        prevFrame = frame
-        setHilightMenu(animated: false)
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         if !frame.equalTo(prevFrame) {
@@ -70,11 +58,11 @@ class TransactionTabMenu: UIView {
     private func setHilightMenu(animated: Bool) {
         let updateView = { () -> Swift.Void in
             if self._selectedIndex == 0 {
-                self.appleButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-                self.androidButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+                self.appleButton.setTitleColor(UIColor.white, for: .normal)
+                self.androidButton.setTitleColor(UIColor.white, for: .normal)
             } else {
-                self.appleButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-                self.androidButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+                self.appleButton.setTitleColor(UIColor.white, for: .normal)
+                self.androidButton.setTitleColor(UIColor.white, for: .normal)
             }
             self.indyLeftConts.constant = CGFloat(self._selectedIndex) * (self.frame.width * 0.5)
             self.layoutIfNeeded()
@@ -94,9 +82,9 @@ class TransactionTabMenu: UIView {
         }
     }
 
-    @IBAction func menuButtonTapped(_ sender: UIButton) {
+    @IBAction private func menuButtonTapped(_ sender: UIButton) {
         if sender.tag != selectedIndex {
-            self.delegate?.transaction(menu: self, selectedAt: sender.tag)
+            self.delegate?.transaction(menu: self, selectedType: ItemsType(rawValue: sender.tag) ?? .apples)
         }
         selectedIndex = sender.tag
     }

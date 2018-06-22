@@ -17,6 +17,7 @@ final class HomeListItemViewModel: HomeItemsViewModel {
     fileprivate(set) var page: Int = 1
     fileprivate      var appleItems = [Item]()
     fileprivate      var androidItems = [Item]()
+    fileprivate(set) var isChangingItems = false
     
     weak var listViewDelegate: HomeItemsViewModelDelegate?
     
@@ -51,14 +52,15 @@ final class HomeListItemViewModel: HomeItemsViewModel {
     
     /// Setup View model to get list items both Apple & Android
     ///
-    func setupListItemsForViewModel() {
+    private func setupListItemsForViewModel() {
         
         // --- Get list items of Apple ---
         homeSearchService.getListAppleItems { [weak self] (items, error) in
             if let error = error {
                 Helper.showAlertViewWith(error: error.toError() as? CTNetworkErrorType)
             } else {
-                self?.currentItems = items      // Set default to Apple items at the first time
+                // Set default to Apple items at the first time
+                self?.currentItems = items
                 self?.appleItems = items
             }
         }
@@ -67,8 +69,22 @@ final class HomeListItemViewModel: HomeItemsViewModel {
             if let error = error {
                 Helper.showAlertViewWith(error: error.toError() as? CTNetworkErrorType)
             } else {
-                self?.appleItems = items
+                self?.androidItems = items
             }
+        }
+    }
+    
+    
+    /// The action when TabMenu changed
+    ///
+    /// - Parameter type: type of items (Apple/Android)
+    func tabMenuDidChange(withType type: ItemsType) {
+        isChangingItems = true
+        switch type {
+        case .apples:
+            currentItems = appleItems
+        case .androids:
+            currentItems = androidItems
         }
     }
 }
