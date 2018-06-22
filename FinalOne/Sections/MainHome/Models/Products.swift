@@ -9,5 +9,9 @@
 import Foundation
 
 struct Products: Decodable {
-    var products: [Item] = []
+    var products: Items
+}
+
+struct Items: Decodable {
+    var items: [Item]
 }

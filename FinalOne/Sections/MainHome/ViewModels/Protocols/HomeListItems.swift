@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+protocol HomeItemsViewModelDelegate: class {
+    func listItemsDidChanged()
+}
+
+protocol HomeItemsViewModel
+{
+    var listViewDelegate: HomeItemsViewModelDelegate? { get set }
+    
+    var numberOfItems: Int { get }
+    
+    func itemAtIndex(_ index: Int) -> Item?
+    
+}

@@ -27,9 +27,9 @@ public struct RESTContants {
     #endif
 
     #if DEBUG
-        public static let kDefineWebserviceResourceUrl             = "https://s3-us-west-2.amazonaws.com/"
+        public static let kDefineWebserviceResourceUrl  = "https://s3-us-west-2.amazonaws.com/"
     #else
-        public static let kDefineWebserviceResourceUrl             = "https://s3-us-west-2.amazonaws.com/"
+        public static let kDefineWebserviceResourceUrl  = "https://s3-us-west-2.amazonaws.com/"
     #endif
     
     static let headers                                  = ["Content-Type": "application/json"]

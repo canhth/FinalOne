@@ -30,6 +30,9 @@
 		CE28072520DBB40C0018B2C3 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28072420DBB40C0018B2C3 /* Products.swift */; };
 		CE28072820DBB4E40018B2C3 /* HomeListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28072720DBB4E40018B2C3 /* HomeListItems.swift */; };
 		CE28072A20DBB4FF0018B2C3 /* HomeListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28072920DBB4FF0018B2C3 /* HomeListItemViewModel.swift */; };
+		CE28072D20DCA63A0018B2C3 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28072B20DCA63A0018B2C3 /* ItemCell.swift */; };
+		CE28072E20DCA63A0018B2C3 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE28072C20DCA63A0018B2C3 /* ItemCell.xib */; };
+		CE28073120DCD3F40018B2C3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28073020DCD3F40018B2C3 /* Helper.swift */; };
 		CE7C856F20DC8C820017EC00 /* TransactionTabMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C856D20DC8C820017EC00 /* TransactionTabMenu.swift */; };
 		CE7C857020DC8C820017EC00 /* TransactionTabMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7C856E20DC8C820017EC00 /* TransactionTabMenu.xib */; };
 /* End PBXBuildFile section */
@@ -87,6 +90,9 @@
 		CE28072420DBB40C0018B2C3 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		CE28072720DBB4E40018B2C3 /* HomeListItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListItems.swift; sourceTree = "<group>"; };
 		CE28072920DBB4FF0018B2C3 /* HomeListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListItemViewModel.swift; sourceTree = "<group>"; };
+		CE28072B20DCA63A0018B2C3 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		CE28072C20DCA63A0018B2C3 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		CE28073020DCD3F40018B2C3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		CE7C856D20DC8C820017EC00 /* TransactionTabMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTabMenu.swift; sourceTree = "<group>"; };
 		CE7C856E20DC8C820017EC00 /* TransactionTabMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionTabMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -309,6 +315,8 @@
 			children = (
 				CE7C856D20DC8C820017EC00 /* TransactionTabMenu.swift */,
 				CE7C856E20DC8C820017EC00 /* TransactionTabMenu.xib */,
+				CE28072B20DCA63A0018B2C3 /* ItemCell.swift */,
+				CE28072C20DCA63A0018B2C3 /* ItemCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +324,7 @@
 		CE7C856C20DC8C5C0017EC00 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CE28073020DCD3F40018B2C3 /* Helper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -441,6 +450,7 @@
 			files = (
 				CE2806D920DB8E990018B2C3 /* LaunchScreen.storyboard in Resources */,
 				CE7C857020DC8C820017EC00 /* TransactionTabMenu.xib in Resources */,
+				CE28072E20DCA63A0018B2C3 /* ItemCell.xib in Resources */,
 				CE2806D620DB8E990018B2C3 /* Assets.xcassets in Resources */,
 				CE2806D420DB8E960018B2C3 /* Main.storyboard in Resources */,
 			);
@@ -568,6 +578,8 @@
 				CE28071B20DBA5B20018B2C3 /* MainHomeViewController.swift in Sources */,
 				CE28071320DBA3AA0018B2C3 /* BaseCoordinator.swift in Sources */,
 				CE28071F20DBAE5F0018B2C3 /* LoadingView.swift in Sources */,
+				CE28073120DCD3F40018B2C3 /* Helper.swift in Sources */,
+				CE28072D20DCA63A0018B2C3 /* ItemCell.swift in Sources */,
 				CE7C856F20DC8C820017EC00 /* TransactionTabMenu.swift in Sources */,
 				CE28072320DBB3090018B2C3 /* HomeServiece.swift in Sources */,
 				CE28070720DB94360018B2C3 /* UIApplication+Extension.swift in Sources */,

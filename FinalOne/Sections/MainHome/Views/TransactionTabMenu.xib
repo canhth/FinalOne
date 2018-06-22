@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionTabMenu" customModule="V1" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionTabMenu" customModule="FinalOne" customModuleProvider="target">
             <connections>
-                <outlet property="favoriteButton" destination="uq2-6R-swg" id="4HY-dH-pUG"/>
+                <outlet property="androidButton" destination="uq2-6R-swg" id="4HY-dH-pUG"/>
+                <outlet property="appleButton" destination="fcd-Md-dvg" id="1dv-Gu-Pjo"/>
                 <outlet property="indyLeftConts" destination="K7g-kJ-A7D" id="VJ4-2a-YyM"/>
                 <outlet property="indyView" destination="bYv-ow-DXD" id="gKh-22-RBo"/>
                 <outlet property="menuBottomLine" destination="5p4-Hq-Qmz" id="WrF-WC-LqN"/>
-                <outlet property="recentButton" destination="fcd-Md-dvg" id="1dv-Gu-Pjo"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -25,11 +25,11 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcd-Md-dvg">
                     <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                    <state key="normal" title="รายการล่าสุด" image="iRecentActive">
-                        <color key="titleColor" red="0.90196078430000004" green="0.46274509800000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Apple">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
                         <action selector="menuButtonTapped:" destination="-1" eventType="touchUpInside" id="Pez-Cl-GoJ"/>
@@ -38,10 +38,10 @@
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uq2-6R-swg">
                     <rect key="frame" x="160" y="0.0" width="160" height="40"/>
                     <accessibility key="accessibilityConfiguration" identifier="favoriteButton"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                    <state key="normal" title="รายการโปรด" image="iFavorite">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="Android">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
                         <action selector="menuButtonTapped:" destination="-1" eventType="touchUpInside" id="lNw-M1-zHR"/>
@@ -62,7 +62,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="0.80169092465753422" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="bYv-ow-DXD" secondAttribute="bottom" id="1WC-pc-Ikp"/>
                 <constraint firstItem="5p4-Hq-Qmz" firstAttribute="leading" secondItem="cbR-Qq-UgN" secondAttribute="leading" id="1lM-Ba-VGd"/>
@@ -84,8 +84,4 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
-    <resources>
-        <image name="iFavorite" width="26" height="25"/>
-        <image name="iRecentActive" width="24" height="24"/>
-    </resources>
 </document>

@@ -10,6 +10,10 @@ import UIKit
 
 class MainHomeViewController: UIViewController {
 
+    fileprivate var viewModel: HomeListItemViewModel = {
+       return HomeListItemViewModel(homeSearchService: HomePageServiece())
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
