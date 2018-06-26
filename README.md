@@ -5,6 +5,7 @@
 ## Technical notes: 
  - Swift version 4.1
  - Xcode 9.4.1 (requires MacOS 10.13.2)
+ - Use SwiftLint to enforce Swift style and conventions.
  - Using [MVVM-C](https://marcosantadev.com/mvvmc-with-swift/) pattern.
  - My Networking library ['CT_RESTAPI'](https://github.com/hoangcanhsek6/CT_RESTApi) (Coable Swift 4).
  - Use the LocalPods and modify the ViewAnimator to support specific animations.
